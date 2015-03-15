@@ -9,6 +9,7 @@
 # ------------------------------------------------------------------------
 
 
+from Objects import World
 import math
 
 
@@ -95,17 +96,48 @@ def convert_map(image):
     designation of the pixel
     """
 
-    pass
+    converted_image = None
+    return World(converted_image, None)
 
 # ------------------------------------------------------------------------
 
 class ProbabilisticDistribution(object):
+    
+    """
+    A Discretized Probabilistic Distribution to perform hypothesis testing 
+    for our Particle Filter
+    """
 
+    def __init__(self, particles):
+        """
+        Basic constructor constructs the state from all particles
+        """
 
+        accumulator = 0.0
+
+        self.state = [p for p in particles if p.weight > 0]
+        self.distribution = []
+
+        # Generates the distribution
+        for p in state:
+            accumulator += p.weight
+            self.distribution.append(accumulator)
+
+    def value(self):
+        """
+        Samples a value from the distribution
+        """
+
+        try: 
+            index = bisect.bisect_left(self.distribution, random.uniform(0, 1))
+            return self.state[index]
+        except IndexError:
+            raise UndefinedValueException("Invalid distribution value generated!")
 
 # ------------------------------------------------------------------------
 
 class UndefinedValueException(Exception):
+    
     """
     Exception determines a case where the value becomes undefined. This 
     occurs when the value is an indeterminate form (a la calculus)

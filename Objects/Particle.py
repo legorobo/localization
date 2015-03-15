@@ -46,33 +46,17 @@ class Particle(object):
     def x(self):
         return self.x
 
-    @x.setter
-    def x(self, value):
-        self.x = value
-
     @y.property
     def y(self):
         return self.y
-
-    @y.setter
-    def y(self, value):
-        self.y = value
 
     @theta.property
     def theta(self):
         return self.theta
 
-    @theta.setter
-    def theta(self, value):
-        self.theta = value
-
     @weight.property
     def weight(self):
         return self.weight
-
-    @weight.setter
-    def weight(self, value):
-        self.weight = value
 
 # ------------------------------------------------------------------------
 
@@ -86,23 +70,6 @@ class Particle(object):
 
 # ------------------------------------------------------------------------
 
-    def landmark_direction(self, landmark):
-        """
-        Calculates the angle of the landmark relative to the robot's current
-        directional vector
-
-        NOTE THIS ASSUMES THAT THE ROBOT ROTATES WITH RESPECT TO THE POSITIVE
-        X-AXIS
-
-        POSITIVE IS A CCW ROTATION AND NEGATIVE IS A CW ROTATION
-        """
-        dx = landmark[0] - self.x
-        dy = landmark[1] - self.y
-        phi = math.atan2(dy / dx)
-
-        return phi - theta
-        
-
     def translate(self, x, y):
         """
         Translates the position of the particles
@@ -111,7 +78,7 @@ class Particle(object):
         self.x += x
         self.y += y
 
-    def iterate(self, velocity, checker):
+    def iterate(self, velocity, checker = None):
         """
         Calculates the position of the particle during the next iteration. 
         Returns if the particles are moved

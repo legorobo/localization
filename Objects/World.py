@@ -20,6 +20,13 @@ ROAD_INDEX = -1
 
 class World(object):
 
+    """
+    This code implements the world that the robot travels on. Need to determine 
+    a way to convert the image to a world object. 
+
+    TODO:   Implement a numerical code for the different colors and things
+    """
+
     def __init__(self, map, robot_size):
         """
         Basic constructor for the world object
