@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+__pycache__/
+.idea/
+.eclipse/
+*~
+.DS_Store
+*.map
