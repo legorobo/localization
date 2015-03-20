@@ -102,10 +102,11 @@ def convert_map(image):
     picture = Image.open(image)
     pic = picture.load()
     map_array = []
-    for i in range(0, picture.size[0]):
+    print(picture.size)
+    for i in range(0, picture.size[1]):
         line = []
-        for j in range(0, picture.size[1]):
-            line.append(pic[i, j])
+        for j in range(0, picture.size[0]):
+            line.append(pic[j, i])
         map_array.append(line)
     return map_array
 
