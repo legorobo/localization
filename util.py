@@ -10,7 +10,9 @@
 
 
 from Objects import World
+from PIL import Image
 import math
+
 
 
 def gaussian(a, b):
@@ -91,13 +93,34 @@ def goodness(particles):
 
 # TODO: Implement
 def convert_map(image):
+    
     """
     Converts the image of a map to an array of values matching the
     designation of the pixel
     """
 
-    converted_image = None
-    return World(converted_image, None)
+    picture = Image.open(image)
+    pic = picture.load()
+    map_array = []
+    for i in range(0, picture.size[0]):
+        line = []
+        for j in range(0, picture.size[1]):
+            line.append(pic[i, j])
+        map_array.append(line)
+    return map_array
+
+def read_map():
+    
+    """
+    Reads the map from a text file to create an array.
+    """
+
+    map_array = []
+    with open("map.in", "r") as f:
+        for line in f.readlines():
+            map_array.append([int(x) for x in line.strip()])
+    return World(map_array, None) # Not accounting for robot size at the moment.
+
 
 # ------------------------------------------------------------------------
 
@@ -109,6 +132,7 @@ class ProbabilisticDistribution(object):
     """
 
     def __init__(self, particles):
+        
         """
         Basic constructor constructs the state from all particles
         """
@@ -124,6 +148,7 @@ class ProbabilisticDistribution(object):
             self.distribution.append(accumulator)
 
     def value(self):
+        
         """
         Samples a value from the distribution
         """
@@ -144,6 +169,7 @@ class UndefinedValueException(Exception):
     """
 
     def __init__(self, message, errors):
+        
         """
         Basic constructor
         """
