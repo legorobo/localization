@@ -23,9 +23,17 @@ class World(object):
     """
     This code implements the world that the robot travels on. Need to determine 
     a way to convert the image to a world object. 
-
-    TODO:   Implement a numerical code for the different colors and things
     """
+
+    LANDSCAPE = 0
+    GRASS = 1
+    SIDEWALK = 2
+    LANE_EDGE = 3
+    ROAD = 4
+    SLOW_EDGE = 5
+    PARKING_EDGE = 6
+    STOP_EDGE = 7
+    ERROR = -1
 
     def __init__(self, map, robot_size):
         """
