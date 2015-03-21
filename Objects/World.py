@@ -15,7 +15,7 @@ import util
 
 
 LANDMARK_INDEX = 99
-ROAD_INDEX = -1
+ROAD_INDEX = 
 
 
 class World(object):

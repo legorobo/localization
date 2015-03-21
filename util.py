@@ -110,11 +110,32 @@ def convert_map(image):
         map_array.append(line)
     return map_array
 
-def read_map():
+def convert_map_to_array(map_array):
     
     """
     Reads the map from a text file to create an array.
     """
+
+    result = []
+    for line in map_array:
+        row = []
+        for element in line:
+            if element == (59, 152, 95):
+                row.append(1) # Green is 1
+            elif element == (160, 160, 160):
+                row.append(2) # Gray is 2
+            elif element == (255, 255, 255):
+                row.append(3) # White is 3
+            elif element == (0, 0, 0):
+                row.append(4) # Black is 4
+            elif element == (255, 216, 0):
+                row.append(5) # Yellow is 5
+            elif element == (0, 28, 255):
+                row.append(6) # Blue is 6
+            elif element == (127, 0, 0):
+                row.append(7) # Red is 7
+            else:
+                row.append(-1) #everything else.
 
     map_array = []
     with open("map.in", "r") as f:
