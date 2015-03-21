@@ -30,7 +30,6 @@ class World(object):
     a way to convert the image to a world object. 
     """
 
-<<<<<<< HEAD
     LANDMARK = 0
     GRASS = 1
     SIDEWALK = 2
