@@ -134,6 +134,8 @@ def convert_map_to_array(map_array):
                 row.append(6) # Blue is 6
             elif element == (127, 0, 0):
                 row.append(7) # Red is 7
+            elif element == (255,0,220):
+                row.append(0)
             else:
                 row.append(-1) #everything else.
         result.append(row)

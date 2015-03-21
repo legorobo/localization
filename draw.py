@@ -46,7 +46,7 @@ class Maze(object):
     def draw(self):
         for x, y in self.blocks:
             turtle.up()
-            turtle.goto(x, y)
+            turtle.setposition(x, y)
             turtle.down()
             turtle.setheading(90)
             turtle.begin_fill()
@@ -58,7 +58,7 @@ class Maze(object):
 
         turtle.color("#00ffff")
         for x, y in self.beacons:
-            turtle.goto(x, y)
+            turtle.setposition(x, y)
             turtle.dot()
         turtle.resetscreen()
         turtle.update()

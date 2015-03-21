@@ -32,8 +32,10 @@ def test2():
         lines = f.readlines()
         for i in range(0,len(lines)):
             lines[i] = [int(x) for x in lines[i].strip().split(' ')]
-    #world = Objects.World.World(lines, (29, 15))
+    world = Objects.World.World(lines, (29, 15))
+    robot = Objects.Agent.Agent(world, 0, 0)
     maze = draw.Maze(lines)
+    maze.show_robot(robot)
     #Simulation.show(pic)
 
 test2()    
