@@ -3,10 +3,14 @@ import Simulation
 
 def test():
     file_name = "map.png"
-    array = util.convert_map(file_name)
-    for row in array:
-        for element in row:
-            pass
+    array = util.convert_map_to_array(util.convert_map(file_name))
+    with open("map.in", "w") as f:
+        for thing in array:
+            for thingy in thing:
+                f.write(str(thingy) +" ")
+            f.write("\n")
+        f.close()
+    
 
 
 GREEN = (59, 152, 95)
@@ -19,12 +23,12 @@ RED = (127, 0, 0)
 
 
 
-def test2():
-    file_name = "map.png"
-    pic = util.convert_map(file_name)
-    Simulation.show(pic)
+# def test2():
+#     file_name = "map.png"
+#     pic = util.convert_map(file_name)
+#     Simulation.show(pic)
 
-test2()    
+test()    
 
 
 """

@@ -14,10 +14,6 @@ import random
 import util
 
 
-LANDMARK_INDEX = 99
-ROAD_INDEX = 
-
-
 class World(object):
 
     """
@@ -25,7 +21,7 @@ class World(object):
     a way to convert the image to a world object. 
     """
 
-    LANDSCAPE = 0
+    LANDMARK = 0
     GRASS = 1
     SIDEWALK = 2
     LANE_EDGE = 3
