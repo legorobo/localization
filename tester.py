@@ -6,7 +6,7 @@ def test():
     array = util.convert_map(file_name)
     for row in array:
         for element in row:
-            
+            pass
 
 
 GREEN = (59, 152, 95)
