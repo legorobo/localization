@@ -1,5 +1,6 @@
 import util
 import Simulation
+import Objects
 
 def test():
     file_name = "map.png"
@@ -23,12 +24,17 @@ RED = (127, 0, 0)
 
 
 
-# def test2():
-#     file_name = "map.png"
-#     pic = util.convert_map(file_name)
-#     Simulation.show(pic)
+def test2():
+    file_name = "map.png"
+    pic = util.convert_map(file_name)
+    with open("map.in") as f:
+        lines = f.readlines()
+        for i in range(0,len(lines)):
+            lines[i] = [int(x) for x in lines[i].strip().split(' ')]
+    world = Objects.World.World(lines, (29, 15))
+    Simulation.show(pic)
 
-test()    
+test2()    
 
 
 """
