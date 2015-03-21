@@ -26,8 +26,8 @@ class Maze(object):
         self.height  = len(maze)
         turtle.setup(width=1280,height=320)
         turtle.bgpic("map.gif")
-        #turtle.setworldcoordinates(0, 0, self.width, self.height)
-        turtle.setWorldCoordinates(0, 0, self.width, self.height)
+        turtle.setworldcoordinates(-self.width / 2, -self.height / 2, self.width / 2, self.height / 2)
+        #turtle.setWorldCoordinates(0, 0, self.width, self.height)
         turtle.resetscreen()
         self.blocks = []
         self.update_cnt = 0
@@ -60,6 +60,7 @@ class Maze(object):
         for x, y in self.beacons:
             turtle.setposition(x, y)
             turtle.dot()
+        turtle.resetscreen()
         turtle.update()
 
     def weight_to_color(self, weight):
