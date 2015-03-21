@@ -34,7 +34,7 @@ def test2():
             lines[i] = [int(x) for x in lines[i].strip().split(' ')]
     #world = Objects.World.World(lines, (29, 15))
     maze = draw.Maze(lines)
-    Simulation.show(pic)
+    #Simulation.show(pic)
 
 test2()    
 
