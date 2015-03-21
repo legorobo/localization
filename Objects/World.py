@@ -30,16 +30,6 @@ class World(object):
     a way to convert the image to a world object. 
     """
 
-    LANDMARK = 0
-    GRASS = 1
-    SIDEWALK = 2
-    LANE_EDGE = 3
-    ROAD = 4
-    SLOW_EDGE = 5
-    PARKING_EDGE = 6
-    STOP_EDGE = 7
-    ERROR = -1
-
     def __init__(self, city_map, robot_size):
 
         """
