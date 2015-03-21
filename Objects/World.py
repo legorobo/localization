@@ -13,6 +13,15 @@ import math
 import random
 import util
 
+LANDMARK_INDEX = 0
+GRASS_INDEX = 1
+SIDEWALK_INDEX = 2
+LANE_EDGE_INDEX = 3
+ROAD_INDEX = 4
+SLOW_EDGE_INDEX = 5
+PARKING_EDGE_INDEX = 6
+STOP_EDGE_INDEX = 7
+ERROR = -1
 
 class World(object):
 
@@ -21,16 +30,6 @@ class World(object):
     a way to convert the image to a world object. 
     """
 
-    LANDMARK = 0
-    GRASS = 1
-    SIDEWALK = 2
-    LANE_EDGE = 3
-    ROAD = 4
-    SLOW_EDGE = 5
-    PARKING_EDGE = 6
-    STOP_EDGE = 7
-    ERROR = -1
-
     def __init__(self, map, robot_size):
         """
         Basic constructor for the world object
@@ -38,7 +37,7 @@ class World(object):
 
         self.map = map
         self.width = len(map[0])
-        self.height = len(maze)
+        self.height = len(map)
 
         # An array of landmarks
         self.landmarks = []
