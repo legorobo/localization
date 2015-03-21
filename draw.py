@@ -28,7 +28,7 @@ class Maze(object):
         turtle.bgpic("map.gif")
         turtle.setworldcoordinates(-self.width / 2, -self.height / 2, self.width / 2, self.height / 2)
         #turtle.setWorldCoordinates(0, 0, self.width, self.height)
-        turtle.resetscreen()
+        #turtle.resetscreen()
         self.blocks = []
         self.update_cnt = 0
         self.one_px = float(turtle.window_width()) / float(self.width) / 2
@@ -46,7 +46,7 @@ class Maze(object):
     def draw(self):
         for x, y in self.blocks:
             turtle.up()
-            turtle.setposition(x, y)
+            turtle.goto(x, y)
             turtle.down()
             turtle.setheading(90)
             turtle.begin_fill()
@@ -58,7 +58,7 @@ class Maze(object):
 
         turtle.color("#00ffff")
         for x, y in self.beacons:
-            turtle.setposition(x, y)
+            turtle.goto(x, y)
             turtle.dot()
         turtle.resetscreen()
         turtle.update()
