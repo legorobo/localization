@@ -24,7 +24,10 @@ class Maze(object):
         self.maze = maze
         self.width   = len(maze[0])
         self.height  = len(maze)
+        turtle.setup(width=1280,height=320)
+        turtle.bgpic("map.gif")
         turtle.setworldcoordinates(0, 0, self.width, self.height)
+        turtle.resetscreen()
         self.blocks = []
         self.update_cnt = 0
         self.one_px = float(turtle.window_width()) / float(self.width) / 2
@@ -36,9 +39,9 @@ class Maze(object):
                     nb_y = self.height - y - 1
                     self.blocks.append((x, nb_y))
                     if block == 2:
-                        print("Before:\t" + str(self.beacons))
+                        #print("Before:\t" + str(self.beacons))
                         self.beacons.extend(((x, nb_y), (x+1, nb_y), (x, nb_y+1), (x+1, nb_y+1)))
-                        print("After:\t" + str(self.beacons) + "\n")
+                        #print("After:\t" + str(self.beacons) + "\n")
     def draw(self):
         for x, y in self.blocks:
             turtle.up()

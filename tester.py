@@ -1,4 +1,5 @@
 import util
+import draw
 import Simulation
 import Objects
 
@@ -31,8 +32,9 @@ def test2():
         lines = f.readlines()
         for i in range(0,len(lines)):
             lines[i] = [int(x) for x in lines[i].strip().split(' ')]
-    world = Objects.World.World(lines, (29, 15))
-    Simulation.show(pic)
+    #world = Objects.World.World(lines, (29, 15))
+    maze = draw.Maze(lines)
+    #Simulation.show(pic)
 
 test2()    
 
