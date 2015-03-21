@@ -8,7 +8,7 @@
 #
 # ------------------------------------------------------------------------
 
-from .. import 
+from .. import Drive_Main
 import Particle
 import random
 import math
@@ -35,6 +35,7 @@ class Agent(Particle):
 
     def __init__(self, world, start_position, bearing):
         super(Agent, self).__init__(*start_position, theta=bearing)
+
         self.world = world
         # self.velocity = Motor.speed()
         self.step_count = 0
@@ -58,13 +59,6 @@ class Agent(Particle):
         """
 
         # self.velocity Motor.speed()
-
-    def update_omega(self):
-        """
-        Updates the robot's omega from the Motor
-        """
-
-        pass
 
     def read_landmark_distance(self):
         """

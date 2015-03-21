@@ -23,7 +23,7 @@ class Particle(object):
     """
 
 
-    def __init__(self, x, y, left_color, right_color, theta=None, weight=1):
+    def __init__(self, x, y, theta=None, weight=1):
         """
         Basic constructor for the Particle object. It takes in the cartesian
         coordinates x,y along with the heading theta, and weight.
@@ -36,8 +36,6 @@ class Particle(object):
         self.y = y
         self.theta = theta
         self.weight = weight
-        self.l_color = left_color
-        self.r_color = right_color
 
     def __repr__(self):
         return "(x = %f, y = %f, theta = %f, weight = %f)" % (x, y, theta, weight)
