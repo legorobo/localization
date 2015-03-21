@@ -19,7 +19,7 @@ PARTICLE_COUNT = 2000
 
 
 # TODO: Implement world map converted
-world = util.convert_map(None)
+world = util.read_map("map.in")
 particles = Particle.generate_random_set(PARTICLE_COUNT, world)
 agent = Agent(world)
 
@@ -35,7 +35,7 @@ def run():
 
         # Update the particle weights accordingly
         for p in particles:
-            if world.is_road(p):
+            if world.is_index(p, World.ROAD):
                 # Instead of calculating the distance between nearest 
                 # landmark relative to p, maybe do it to agent?
                 p_distance = util.distance(p, world.nearest_landmark(p))

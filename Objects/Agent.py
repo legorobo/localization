@@ -8,7 +8,7 @@
 #
 # ------------------------------------------------------------------------
 
-
+from .. import 
 import Particle
 import random
 import math
@@ -50,7 +50,7 @@ class Agent(Particle):
 
         # self.theta = Gyro.read()
 
-    def update_velocity(self):
+    def update_v(self):
         """
         Updates the robot's velocity from the Motor
         
@@ -58,6 +58,13 @@ class Agent(Particle):
         """
 
         # self.velocity Motor.speed()
+
+    def update_omega(self):
+        """
+        Updates the robot's omega from the Motor
+        """
+
+        pass
 
     def read_landmark_distance(self):
         """

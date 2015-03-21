@@ -138,11 +138,17 @@ def convert_map_to_array(map_array):
                 row.append(-1) #everything else.
         result.append(row)
     return result
-    # map_array = []
-    # with open("map.in", "r") as f:
-    #     for line in f.readlines():
-    #         map_array.append([int(x) for x in line.strip()])
-    # return World(map_array, None) # Not accounting for robot size at the moment.
+
+def read_map(map_array):
+
+    """
+    Returns the map converted to the world
+    """
+
+    with open(map_array, "r") as f:
+        for line in f.readlines():
+            map_array.append([int(x) for x in line.strip()])
+    return World(map_array, (29, 15)) # Not accounting for robot size at the moment.
 
 
 # ------------------------------------------------------------------------

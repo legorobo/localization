@@ -31,14 +31,14 @@ class World(object):
     STOP_EDGE = 7
     ERROR = -1
 
-    def __init__(self, map, robot_size):
+    def __init__(self, city_map, robot_size):
         """
         Basic constructor for the world object
         """
 
-        self.map = map
-        self.width = len(map[0])
-        self.height = len(maze)
+        self.map = city_map
+        self.width = len(city_map[0])
+        self.height = len(city_map)
 
         # An array of landmarks
         self.landmarks = []
@@ -60,7 +60,7 @@ class World(object):
 
         return particle.x < 0 or particle.y < 0 or particle.x > self.width or particle.y > self.width
 
-    def is_road(self, particle):
+    def is_index(self, particle, index):
         """
         Determines if the particle is placed on a block that is a road
         """
@@ -71,7 +71,7 @@ class World(object):
         y_0 = self.height- int(particle.y) - 1
         x_0 = int(particle.x)
 
-        return self.map[x_0][y_0] == ROAD_INDEX
+        return self.map[x_0][y_0] == index
 
 # ------------------------------------------------------------------------
 
@@ -105,7 +105,7 @@ class World(object):
         """
         while True:
             x, y = self.random_position()
-            if self.is_road(x, y):
+            if self.is_index(x, y, ROAD):
                 return (x, y)
 
 

@@ -68,6 +68,14 @@ class Particle(object):
 
         return [cls(*world.random_open_position()) for _ in range(0, count)]
 
+    @classmethod
+    def generate_initial_set(cls, count, world, position):
+        """
+        Creates the initial set of particles at position tuple (x,y)
+        """
+
+        return [cls(*position) for _ in range(0, count)]
+
 # ------------------------------------------------------------------------
 
     def translate(self, x, y):
